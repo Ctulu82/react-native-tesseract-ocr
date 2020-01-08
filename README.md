@@ -21,6 +21,7 @@ react-native-tesseract-ocr is a react-native wrapper for [Tesseract OCR](https:/
    ```
 - *disable bitcode*
 - *add libz.tbd in target app -> Link Binary With Libraries*
+- *https://github.com/Kila2/libstdc-.6.0.9.tbd*
 
 ## Usage
 ```javascript
