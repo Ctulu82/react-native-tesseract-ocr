@@ -1,4 +1,3 @@
-
 {
   "name": "react-native-tesseract-ocr",
   "version": "1.0.10",
@@ -11,15 +10,17 @@
     "react-native",
     "tesseract ocr",
     "optical character recognition",
-    "cognitive services"
+    "cognitive services",
+    "iOS"
   ],
+  "homepage": "https://github.com/ducnmisbk/react-native-tesseract-ocr.git",
   "repository": {
     "type": "git",
-    "url": "git@github.com:jonathanpalma/react-native-tesseract-ocr.git"
+    "url": "git@github.com:ducnmisbk/react-native-tesseract-ocr.git"
   },
   "bugs": {
     "url": "https://github.com/jonathanpalma/react-native-tesseract-ocr/issues"
   },
-  "author": "Jonathan Palma <tanpalma04@gmail.com> (https://github.com/jonathanpalma)",
+  "author": "Duc Nguyen <ducnm.isbk@gmail.com> (https://github.com/ducnmisbk)",
   "license": "MIT"
 }
