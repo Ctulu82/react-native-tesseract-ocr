@@ -72,8 +72,15 @@ RCT_EXPORT_METHOD(recognize:(nonnull NSString*)path
 {
     RCTLogInfo(@"starting Ocr");
     
-    _tesseract = [[G8Tesseract alloc] initWithLanguage:language];
+//    _tesseract = [[G8Tesseract alloc] initWithLanguage:language];
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    _tesseract = [[G8Tesseract alloc] initWithLanguage:language configDictionary:nil configFileNames:nil absoluteDataPath:documentPath engineMode:G8OCREngineModeTesseractOnly copyFilesFromResources:NO];
 //    _tesseract.image = [[UIImage imageWithData:[NSData dataWithContentsOfFile:path]] g8_blackAndWhite];
+    
+    if (!_tesseract) {
+        reject(@"no_events", @"Could not load any language",[NSError errorWithDomain:@"com.tesseract" code:1001 userInfo:@{NSLocalizedDescriptionKey:@"Could not load any language"}]);
+        return;
+    }
     
     UIImage *originImg = [UIImage imageNamed:path];
     _tesseract.image = [self processImage:originImg];
@@ -102,7 +109,7 @@ RCT_EXPORT_METHOD(recognize:(nonnull NSString*)path
     BOOL success = _tesseract.recognize;
     NSString *recognizedText = _tesseract.recognizedText;
     
-    NSArray *characterBoxes = [_tesseract recognizedBlocksByIteratorLevel:G8PageIteratorLevelSymbol];
+    NSArray *characterBoxes = [_tesseract recognizedBlocksByIteratorLevel:G8PageIteratorLevelWord];
     NSMutableArray *boxes = [[NSMutableArray alloc] initWithCapacity:characterBoxes.count];
     
     for (G8RecognizedBlock *block in characterBoxes) {
@@ -115,7 +122,7 @@ RCT_EXPORT_METHOD(recognize:(nonnull NSString*)path
                                    @"height": [NSNumber numberWithFloat:block.boundingBox.size.height]
                                    },
                            @"confidence" : [NSNumber numberWithFloat:block.confidence],
-                           @"level" : [NSNumber numberWithInt:block.level]
+                           @"level" : [NSNumber numberWithLong:block.level]
                            }];
     }
     
