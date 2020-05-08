@@ -6,7 +6,7 @@ react-native-tesseract-ocr is a react-native wrapper for [Tesseract OCR](https:/
 
 ## Getting started
 
-`$ yarn add https://github.com/ducnmisbk/react-native-tesseract-ocr.git` 
+`$ yarn add https://github.com/Ctulu82/react-native-tesseract-ocr.git` 
 
 ### Mostly automatic installation
 
