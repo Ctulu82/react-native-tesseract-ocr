@@ -13,14 +13,11 @@
     "cognitive services",
     "iOS"
   ],
-  "homepage": "https://github.com/ducnmisbk/react-native-tesseract-ocr.git",
+  "homepage": "https://github.com/Ctulu82/react-native-tesseract-ocr.git",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ducnmisbk/react-native-tesseract-ocr.git"
+    "url": "git@github.com:Ctulu82/react-native-tesseract-ocr.git"
   },
-  "bugs": {
-    "url": "https://github.com/jonathanpalma/react-native-tesseract-ocr/issues"
-  },
-  "author": "Duc Nguyen <ducnm.isbk@gmail.com> (https://github.com/ducnmisbk)",
+  "author": "TaeHyun Kim <taehyun.kim1982@gmail.com> (https://github.com/Ctulu82)",
   "license": "MIT"
 }
